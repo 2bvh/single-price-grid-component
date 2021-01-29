@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --LightCyan: hsl(179, 47%, 52%);
+  --Yellow: hsl(71, 73%, 54%);
+  --Gray: hsl(204, 43%, 93%);
+  --Bluegray: hsl(218, 22%, 67%);
+}
+
+body {
+  background-color: var(--Gray);
+}
+
+main {
+  width: 100%;
+  margin: auto;
+  line-height: 1.5em;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  padding: 25px;
+}
+
+.block {
+  padding: 20px;
+}
+
+/* TOP */
+
+.top {
+  background-color: white;
+  grid-area: top;
+}
+
+.top h2 {
+  color: var(--Cyan);
+  margin: 10px 0;
+}
+
+.top h3 {
+  color: var(--Yellow);
+  margin: 15px 0;
+}
+
+.top p {
+  color: var(--Bluegray);
+  margin: 15px 0;
+}
+
+/* END OF TOP */
+/* MIDDLE */
+
+.middle {
+  grid-area: middle;
+  color: white;
+  background-color: var(--Cyan);
+}
+
+.price {
+  display: flex;
+  margin: 15px 0;
+}
+
+.dollar-amount {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.per-month {
+  color: var(--Gray);
+  margin-left: 15px;
+}
+
+#sign-up {
+  color: white;
+  background-color: var(--Yellow);
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+/* END OF MIDDLE */
+/* BOTTOM */
+
+.bottom {
+  grid-area: bottom;
+  color: white;
+  background-color: var(--LightCyan);
+}
+
+.bottom ul {
+  list-style: none;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+/* END OF BOTTOM */
+/* DESKTOP & TABLET GRID */
+
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  main {
+    display: grid;
+    max-width: 650px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "top top"
+      "middle bottom";
+  }
+
+  .top {
+    grid-area: top;
+  }
+
+  .middle {
+    grid-area: middle;
+  }
+
+  .bottom {
+    grid-area: bottom;
+  }
+}
+
+/* END OF DESKTOP & TABLET GRID */
